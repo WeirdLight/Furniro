@@ -1,0 +1,133 @@
+$main-color: #fff
+$fs-logo: 28px
+$fc-logo: #000
+$ff-poppins: "Poppins", sans-serif
+$fs-nav: 14px
+$fs-label: 12px
+$fs-h1: 40px
+$fc-active: #be973f
+$banner-color: #B88E2F
+
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+header
+    height: 70px
+    width: 100%
+    position: sticky
+    top: 0
+    background-color: $main-color
+    display: flex
+    justify-content: space-around
+    align-items: center
+
+    .logo
+        text-decoration: none
+        height: 100%
+        display: flex
+        align-items: center
+
+        h1
+            display: inline
+            font-size: $fs-logo
+            color: $fc-logo
+            font-weight: bold
+            font-family: $ff-poppins
+
+        img
+            width: 38px
+            margin-bottom: 2px
+    
+    nav
+        width: 30%
+        min-width: 250px
+
+        a
+            text-decoration-color: rgba(0,0,0,0)
+            text-underline-offset: 4px
+            color: $fc-logo
+
+            &:hover
+                text-decoration-color: $fc-logo
+            &:active
+                text-decoration-color: $fc-logo
+                color: $fc-active
+
+    ul
+        width: 100%
+        display: flex
+        justify-content: space-between
+
+        li
+            list-style: none
+            display: inline
+            font-size: $fs-nav
+            font-weight: medium
+            font-family: $ff-poppins
+    
+    .services
+        width: 15%
+        min-width: 150px
+        display: flex
+        justify-content: space-between
+
+        a
+            width: 28px
+            height: 28px
+
+main
+    background-image: url(./src/background-img.svg)
+    width: 100%
+    height: 89.4vh
+    background-position: center center
+    background-size: cover
+    background-repeat: no-repeat
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: flex-end
+
+    .banner
+        width: 500px
+        height: 355px
+        background-color: #FFF3E3
+        padding: 50px 30px 30px 40px
+        margin-right: 5%
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+
+    .label
+        letter-spacing: 3px
+        font-weight: 600
+        font-size: $fs-label
+
+    p
+        color: $fc-logo
+        font-family: $ff-poppins
+    
+    .descr
+        font-size: $fs-nav
+        font-weight: 500
+    
+    h1
+        font-family: $ff-poppins
+        font-size: $fs-h1
+        color: $banner-color
+        font-weight: bold
+        line-height: 50px
+        margin-bottom: 10px
+    
+    button
+        width: 144px
+        height: 56px
+        border: none
+        background-color: $banner-color
+        font-family: $ff-poppins
+        color: $main-color
+        font-weight: bold
+        font-size: $fs-nav
+    

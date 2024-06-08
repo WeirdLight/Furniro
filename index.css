@@ -1,155 +1,127 @@
-:root{
-    --main-color: #fff;
-    --fs-logo: 28px;
-    --fc-logo: #000;
-    --ff-poppins: "Poppins", sans-serif;
-    --fs-nav: 14px;
-    --fs-descr: 16px;
-    --fs-h1: 52px;
-    --fc-active: #be973f;
-    --banner-color: #B88E2F;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+header {
+  height: 70px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header .logo {
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+header .logo h1 {
+  display: inline;
+  font-size: 28px;
+  color: #000;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+header .logo img {
+  width: 38px;
+  margin-bottom: 2px;
+}
+header nav {
+  width: 30%;
+  min-width: 250px;
+}
+header nav a {
+  text-decoration-color: rgba(0, 0, 0, 0);
+  text-underline-offset: 4px;
+  color: #000;
+}
+header nav a:hover {
+  text-decoration-color: #000;
+}
+header nav a:active {
+  text-decoration-color: #000;
+  color: #be973f;
+}
+header ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+header ul li {
+  list-style: none;
+  display: inline;
+  font-size: 14px;
+  font-weight: medium;
+  font-family: "Poppins", sans-serif;
+}
+header .services {
+  width: 15%;
+  min-width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+header .services a {
+  width: 28px;
+  height: 28px;
 }
 
-header{
-    height: 70px;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    background-color: var(--main-color);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border: 2px solid;
+main {
+  background-image: url(./src/background-img.svg);
+  width: 100%;
+  height: 89.4vh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+main .banner {
+  width: 500px;
+  height: 355px;
+  background-color: #FFF3E3;
+  padding: 50px 30px 30px 40px;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .label {
+  letter-spacing: 3px;
+  font-weight: 600;
+  font-size: 12px;
+}
+main p {
+  color: #000;
+  font-family: "Poppins", sans-serif;
+}
+main .descr {
+  font-size: 14px;
+  font-weight: 500;
+}
+main h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  color: #B88E2F;
+  font-weight: bold;
+  line-height: 50px;
+  margin-bottom: 10px;
+}
+main button {
+  width: 144px;
+  height: 56px;
+  border: none;
+  background-color: #B88E2F;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
 }
 
-.logo{
-    text-decoration: none;
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.logo h1{
-    display: inline;
-    font-size: var(--fs-logo);
-    color: var(--fc-logo);
-    font-weight: bold;
-    font-family: var(--ff-poppins);
-}
-
-.logo img{
-    width: 38px;
-    margin-bottom: 2px;
-}
-
-header nav{
-    width: 30%;
-    min-width: 250px;
-}
-
-header ul{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-header li{
-    list-style: none;
-    display: inline;
-    font-size: var(--fs-nav);
-    font-weight: medium;
-    font-family: var(--ff-poppins);
-}
-
-header nav a{
-    text-decoration-color: rgba(0,0,0,0);
-    text-underline-offset: 4px;
-    color: var(--fc-logo);
-}
-
-header nav a:hover{
-    text-decoration-color: var(--fc-logo);
-}
-
-header nav a:active{
-    color: var(--fc-active);
-    text-decoration-color: var(--fc-active);
-}
-
-.services{
-    width: 15%;
-    min-width: 150px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.services a{
-    width: 28px;
-    height: 28px;
-}
-
-main{
-    background-image: url(./src/background-img.svg);
-    width: 100%;
-    height: 89.4vh;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-}
-
-.banner{
-    width: 600px;
-    height: 444px;
-    transform: scale(0.8, 0.8);
-    background-color: #FFF3E3;
-    padding: 50px 140px 30px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: absolute;
-    right: 0%;
-    top: 70px
-}
-
-main p{
-    color: var(--fc-logo);
-    font-family: var(--ff-poppins);
-}
-
-.label{
-    letter-spacing: 3px;
-    font-weight: 600;
-    font-size: var(--fs-nav);
-}
-
-.descr{
-    font-size: var(--fs-descr);
-    font-weight: 500;
-}
-
-main h1{
-    font-family: var(--ff-poppins);
-    font-size: var(--fs-h1);
-    color: var(--banner-color);
-    font-weight: bold;
-    line-height: 60px;
-    margin-bottom: 10px;
-}
-
-main button{
-    width: 180px;
-    height: 70px;
-    border: none;
-    background-color: var(--banner-color);
-    font-family: var(--ff-poppins);
-    color: var(--main-color);
-    font-weight: bold;
-    font-size: var(--fs-nav);
-}
+/*# sourceMappingURL=index.css.map */
