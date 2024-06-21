@@ -2,6 +2,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 header {
@@ -13,6 +23,9 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+header .container {
+  justify-content: space-between;
 }
 header .logo {
   text-decoration: none;
@@ -44,7 +57,7 @@ header nav a:hover {
   text-decoration-color: #000;
 }
 header nav a:active {
-  text-decoration-color: #000;
+  text-decoration-color: #be973f;
   color: #be973f;
 }
 header ul {
@@ -77,17 +90,18 @@ main {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+main .container {
+  justify-content: end;
 }
 main .banner {
   width: 500px;
   height: 355px;
   background-color: #FFF3E3;
   padding: 50px 30px 30px 40px;
-  margin-right: 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -99,14 +113,12 @@ main .label {
 }
 main p {
   color: #000;
-  font-family: "Poppins", sans-serif;
 }
 main .descr {
   font-size: 14px;
   font-weight: 500;
 }
 main h1 {
-  font-family: "Poppins", sans-serif;
   font-size: 40px;
   color: #B88E2F;
   font-weight: bold;
@@ -118,10 +130,56 @@ main button {
   height: 56px;
   border: none;
   background-color: #B88E2F;
-  font-family: "Poppins", sans-serif;
   color: #fff;
   font-weight: bold;
   font-size: 14px;
 }
 
-/*# sourceMappingURL=index.css.map */
+section.range {
+  margin-top: 30px;
+  text-align: center;
+}
+section.range span.text {
+  width: 100%;
+  margin-bottom: 20px;
+}
+section.range span.text h2 {
+  font-size: 24px;
+  color: black;
+  font-weight: bold;
+  line-height: auto;
+  margin-bottom: 5px;
+}
+section.range span.text p {
+  font-size: 14px;
+  color: black;
+  font-weight: regular;
+  line-height: auto;
+  margin-bottom: 0;
+}
+section.range .ranges {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+section.range .item {
+  margin-bottom: 20px;
+  cursor: pointer;
+  padding-bottom: 10px;
+  transition: 0.3s;
+}
+section.range .item:hover {
+  box-shadow: 0px 3px 10px 2px rgba(171, 190, 209, 0.8);
+  border-radius: 10px;
+}
+section.range .item span.img {
+  width: 300px;
+  height: 400px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 20px;
+}/*# sourceMappingURL=index.css.map */

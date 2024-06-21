@@ -5,14 +5,30 @@ $ff-poppins: "Poppins", sans-serif
 $fs-nav: 14px
 $fs-label: 12px
 $fs-h1: 40px
+$fs-h2: 24px
 $fc-active: #be973f
 $banner-color: #B88E2F
 
+@mixin text($fs, $fw, $line-height, $marginB, $color)
+    font-size: $fs
+    color: $color
+    font-weight: $fw
+    line-height: $line-height
+    margin-bottom: $marginB
 
 *
     box-sizing: border-box
     margin: 0
     padding: 0
+    font-family: $ff-poppins
+
+.container
+    max-width: 1200px
+    width: 80%
+    margin: 0 auto
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
 
 header
     height: 70px
@@ -23,6 +39,9 @@ header
     display: flex
     justify-content: space-around
     align-items: center
+
+    .container
+        justify-content: space-between
 
     .logo
         text-decoration: none
@@ -40,7 +59,7 @@ header
         img
             width: 38px
             margin-bottom: 2px
-    
+
     nav
         width: 30%
         min-width: 250px
@@ -53,7 +72,7 @@ header
             &:hover
                 text-decoration-color: $fc-logo
             &:active
-                text-decoration-color: $fc-logo
+                text-decoration-color: $fc-active
                 color: $fc-active
 
     ul
@@ -67,7 +86,7 @@ header
             font-size: $fs-nav
             font-weight: medium
             font-family: $ff-poppins
-    
+
     .services
         width: 15%
         min-width: 150px
@@ -85,17 +104,18 @@ main
     background-position: center center
     background-size: cover
     background-repeat: no-repeat
-    position: relative
     display: flex
     align-items: center
     justify-content: flex-end
+    
+    .container
+        justify-content: end
 
     .banner
         width: 500px
         height: 355px
         background-color: #FFF3E3
         padding: 50px 30px 30px 40px
-        margin-right: 5%
         display: flex
         flex-direction: column
         justify-content: space-between
@@ -107,27 +127,58 @@ main
 
     p
         color: $fc-logo
-        font-family: $ff-poppins
-    
+
     .descr
         font-size: $fs-nav
         font-weight: 500
-    
+
     h1
-        font-family: $ff-poppins
-        font-size: $fs-h1
-        color: $banner-color
-        font-weight: bold
-        line-height: 50px
-        margin-bottom: 10px
-    
+        @include text($fs-h1, bold, 50px, 10px, $banner-color)
+
     button
         width: 144px
         height: 56px
         border: none
         background-color: $banner-color
-        font-family: $ff-poppins
         color: $main-color
         font-weight: bold
         font-size: $fs-nav
+
+section.range
+    margin-top: 30px
+    text-align: center
+
+    span.text
+        width: 100%
+        margin-bottom: 20px
+        h2
+            @include text($fs-h2, bold, auto, 5px, black)
+
+        p
+            @include text($fs-nav, regular, auto, 0, black)
     
+    .ranges
+        display: flex
+        width: 100%
+        justify-content: space-between
+        flex-wrap: wrap
+
+    .item
+        margin-bottom: 20px
+        cursor: pointer
+        padding-bottom: 10px
+        transition: 0.3s
+
+        &:hover
+            box-shadow: 0px 3px 10px 2px rgba(171, 190, 209, 0.8)
+            border-radius: 10px
+        span.img
+            width: 300px
+            height: 400px
+            background-position: center center
+            background-size: cover
+            background-repeat: no-repeat
+            border-radius: 10px
+            display: block
+            margin-bottom: 20px
+        
