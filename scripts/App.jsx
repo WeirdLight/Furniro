@@ -19,10 +19,7 @@ export default function App(){
                     </ul>
                 </nav>
                 <div className="services">
-                    <Services type={'account'}/>
-                    <Services type={'search'}/>
-                    <Services type={'favourite'}/>
-                    <Services type={'basket'}/>
+                    <Services />
                 </div>
             </div>
         </header>

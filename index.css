@@ -146,14 +146,14 @@ section.range span.text {
 }
 section.range span.text h2 {
   font-size: 24px;
-  color: black;
+  color: #3A3A3A;
   font-weight: bold;
   line-height: auto;
   margin-bottom: 5px;
 }
 section.range span.text p {
   font-size: 14px;
-  color: black;
+  color: #666666;
   font-weight: regular;
   line-height: auto;
   margin-bottom: 0;
