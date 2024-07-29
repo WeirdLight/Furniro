@@ -5,7 +5,8 @@ $ff-poppins: "Poppins", sans-serif
 $fs-nav: 14px
 $fs-label: 12px
 $fs-h1: 40px
-$fs-h2: 24px
+$fs-h2: 30px
+$fs-h3: 24px
 $descr-color: #616161
 $color-section: #FCF8F3
 $fc-active: #be973f
@@ -15,6 +16,8 @@ $fc-h3: #333333
 $banner-color: #B88E2F
 $color-sales: #E97171
 $color-new: #2EC1AC
+$color-footer: #9F9F9F
+$border-color: #D9D9D9
 
 @mixin text($fs, $fw, $line-height, $marginB, $color)
     font-size: $fs
@@ -29,8 +32,11 @@ $color-new: #2EC1AC
     padding: 0
     font-family: $ff-poppins
 
+h2
+    @include text($fs-h2, bold, auto, 5px, $fc-headers)
+
 .container
-    max-width: 1200px
+    max-width: 1000px
     width: 80%
     margin: 0 auto
     display: flex
@@ -41,13 +47,22 @@ header
     height: 70px
     width: 100%
     position: sticky
-    z-index: 1
+    z-index: 2
     box-shadow: 0px 4px 8px 0px rgba(171, 190, 209, 0.4)
     top: 0
     background-color: $main-color
     display: flex
     justify-content: space-around
     align-items: center
+
+    .burger
+        background-image: url(../src/burger.svg)
+        background-position: center center
+        background-repeat: no-repeat
+        background-size: contain
+        width: 30px
+        height: 20px
+        display: none
 
     .container
         justify-content: space-between
@@ -161,8 +176,6 @@ section.range
     span.text
         width: 100%
         margin-bottom: 20px
-        h2
-            @include text($fs-h2, bold, auto, 5px, $fc-headers)
 
         p
             @include text($fs-nav, regular, auto, 0, $fc-descr)
@@ -174,7 +187,7 @@ section.range
         flex-wrap: wrap
 
     .item
-        margin-bottom: 20px
+        margin: 0 auto 20px auto
         cursor: pointer
         padding-bottom: 10px
         transition: 0.3s
@@ -198,8 +211,8 @@ section.our-products
     .container
         margin-top: 30px
         display: grid
-        grid-template-areas: "span1 span2 span3 span4"
         justify-content: space-between
+        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr))
 
         .item
             width: 200px
@@ -207,17 +220,13 @@ section.our-products
             position: relative
             padding-bottom: 20px
             display: grid
-            margin-bottom: 20px
+            margin: 0 auto 20px auto
             text-align: left
             background-color: #F4F5F7
 
             &:hover
                 .hover
                     display: flex
-
-            h3
-                height: auto
-                color: $fc-headers
 
             h3+p
                 font-size: $fs-label
@@ -326,22 +335,22 @@ section.our-products
         @include text($fs-nav, normal, normal, 0, $fc-active)
         border: 2px solid $fc-active
         cursor: pointer
-        transition: background-color 0.3s, color 0.3s
+        transition: border-width 0.1s, background-color 0.3s, color 0.3s
 
     .container + button
         margin-top: 10px
         &:hover
+            border-width: 4px
+        &:active
             background-color: $fc-active
             color: $main-color
-        &:active
-            background-color: darken($fc-active, 8%)
-            border: none
 
 section.rooms
     display: flex
     margin: 40px 0
     background-color: $color-section
     height: 410px
+    overflow-x: hidden
     position: relative
     flex-wrap: nowrap
     padding: 30px 0 30px 0
@@ -350,6 +359,7 @@ section.rooms
         flex-wrap: nowrap
         align-items: center
         justify-content: start
+        position: relative
 
     div.title
         display: flex
@@ -358,7 +368,6 @@ section.rooms
         justify-content: space-between
         width: 320px
         height: 220px
-        margin-left: 15%
         h2
             @include text(30px, bold, normal, 20px, $fc-headers)
             display: flex
@@ -379,7 +388,7 @@ section.rooms
     .container-rooms
         display: flex
         flex-wrap: nowrap
-        right: 0px
+        right: -152px
         width: 600px
         overflow-x: hidden
         justify-content: space-between
@@ -427,7 +436,7 @@ section.rooms
                     display: flex
                     margin: 0 10px
             h3
-                @include text($fs-h2, bold, normal, 0, $fc-h3)
+                @include text($fs-h3, bold, normal, 0, $fc-h3)
                 display: flex
                 width: 150px
             a
@@ -455,7 +464,8 @@ section.rooms
     .next
         width: 50px
         height: 50px
-        right: 3%
+        top: 150px
+        right: -10%
         background-color: rgba($main-color, 0.9)
         display: flex
         position: absolute
@@ -467,14 +477,14 @@ section.rooms
         cursor: pointer
 
     .circles
-        grid-area: circles
+        position: absolute
         display: flex
         flex-wrap: nowrap
         justify-content: space-between
         width: 0px
         z-index: 1
-        margin-top: 340px
-        margin-right: 223px
+        top: 330px
+        right: 75px
 
     .circle
         width: 20px
@@ -499,47 +509,108 @@ section.rooms
             background-color: $fc-active
 
 section.sharing
-    .container
-        flex-wrap: wrap
-        align-items: center
+    text-align: center
+    overflow: hidden
 
-    img:nth-of-type(1)
-        width: 274px
-        height: 382px
+    div
+        margin: 20px auto 0 auto
+        width: 130%
+        min-width: 800px
+        height: auto
+        display: flex
+        justify-content: center
+        padding-left: 0%
+        animation-name: marquee1
+        animation-delay: 2s
+        animation-duration: 10s
+        animation-iteration-count: infinite
+        animation-timing-function: linear
 
-    img:nth-of-type(2)
-        width: 274px
-        height: 382px
+        img
+            width: 100%
+            object-fit: contain
+            margin-right: 1%
+            &:last-child
+                margin-right: 0
+            
+@keyframes marquee1
+    100%
+        transform: translateX(-100.9%)
 
-    img:nth-of-type(3)
-        width: 274px
-        height: 382px
+footer
+    margin-top: 20px
+    padding: 48px 0 38px 0
+    border-top: 1px solid $border-color
 
-    img:nth-of-type(4)
-        width: 274px
-        height: 382px
+    div.container
+        justify-content: space-between
+        .logo
+            font-size: $fs-h3
+            margin-bottom: 50px
+        .location
+            @include text($fs-nav, 400, normal, 0, $color-footer)
+            width: 285px
+        
+        ul
+            li
+                list-style: none
+                margin-bottom: 46px 
+                
+                a
+                    @include text($fs-nav, 400, normal, 0, $fc-logo)
+                    text-decoration-color: rgba(0,0,0,0)
+                    text-underline-offset: 6px
+                    &:hover
+                        text-decoration-color: $fc-logo
 
-    img:nth-of-type(5)
-        width: 274px
-        height: 382px
+                &:first-of-type
+                    color: $color-footer
+                    margin-bottom: 55px
+            &:nth-of-type(2)
+                margin-right: 30px
+    form
+        margin-bottom: 46px 
+    label
+        @include text($fs-nav, 400, normal, 0, $color-footer)
+        display: block
+        margin-bottom: 53px
 
-    img:nth-of-type(6)
-        width: 274px
-        height: 382px
+    input[type='email']
+        border: none
+        background-color: rgba(0,0,0,0)
+        border-bottom: 1.5px solid $fc-logo
+        width: 200px
+        height: 23px
 
-    img:nth-of-type(7)
-        width: 274px
-        height: 382px
+        &::placeholder
+            @include text($fs-label, 400, normal, 0, $color-footer)
+        
 
-    img:nth-of-type(8)
-        width: 274px
-        height: 382px
+    input[type='submit']
+        @include text($fs-nav, 500, normal, 0, $fc-logo)
+        text-transform: uppercase
+        border: none
+        background-color: rgba(0,0,0,0)
+        border-bottom: 1.5px solid $fc-logo
+        margin-left: 4px
+        cursor: pointer
 
-    img:nth-of-type(9)
-        width: 274px
-        height: 382px
+        &:active
+            color: #be973f
+            border-color: #be973f
 
+    hr
+        width: 100%
+        background-color: $border-color
+        opacity: 0.4
+    
+    hr+p
+        @include text($fs-nav, 400, normal, 0, $fc-logo)
 
+    div.container:nth-of-type(2)
+        flex-direction: column
+        justify-content: space-between
+        height: 60px
 @keyframes box
     0%
         margin-left: 100%
@@ -547,3 +618,102 @@ section.sharing
     100%
         margin-right: 0
         opacity: 1
+
+@media (max-width: 800px) 
+    nav
+        display: none
+        position: absolute
+        top: 70px
+        left: 0
+        width: auto
+        background-color: rgba(255,255,255,0.5)
+        backdrop-filter: blur(8px)
+        overflow: hidden
+        ul
+            margin-left: 40px
+            display: block
+
+            li
+                display: block
+                height: 40px
+
+                &:first-of-type
+                    margin-top: 20px
+    
+    #account
+        display: none
+
+    #favourite
+        display: none
+
+    header 
+        .burger
+            display: block
+        .services
+            width: 80px
+            min-width: auto
+        .logo
+            margin: 0 auto
+
+@media (max-width: 980px)
+    section.rooms 
+        height: auto
+        div.title
+            display: flex
+            justify-content: center
+            width: 100%
+            h2, p, span
+                width: 400px
+            span
+                margin: 0 auto 30px auto
+        .container
+            flex-wrap: wrap
+            justify-content: center
+            text-align: center
+
+            button
+                margin: 0 auto
+
+        .wrapper
+            margin-top: 20px
+            width: 100%
+            padding-left: 20%
+            padding-right: 20%
+            display: flex
+            align-items: center
+            .circles
+                align-items: center
+                margin: 0 auto
+                position: static
+                display: flex
+
+        .container-rooms
+            margin-top: 20px
+            position: static
+            width: 300px
+            overflow-x: hidden
+
+            .room
+                width: 300px
+                height: 350px
+        
+        .next
+            display: flex
+            width: 30px
+            height: 30px
+            margin-left: 10px
+            position: static
+
+        .prev
+            width: 30px
+            height: 30px
+            margin-right: 10px
+            background-color: rgba($main-color, 0.9)
+            display: flex
+            transform: rotate(180deg)
+            border-radius: 50px
+            background-image: url(../../src/next.svg)
+            background-position: center center
+            background-repeat: no-repeat
+            box-shadow: -1px 4px 8px 0px rgba(171, 190, 209, 0.4)
+            cursor: pointer

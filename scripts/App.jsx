@@ -8,6 +8,7 @@ export default function App(){
     return <>
         <header>
             <div className="container">
+                <div className="burger"></div>
                 <a href="#" className="logo">
                     <img src="./src/logo.svg" alt="logo" />
                     <h1>Furniro</h1>
@@ -54,18 +55,42 @@ export default function App(){
         <Rooms />
         <section className="sharing">
             <p>Share your setup with</p>
-            <h3>#FuniroFurniture</h3>
-            <div className="container">
-                <div><img src="../../src/sharing/image.png" alt="image1" /></div>
-                <div><img src="../../src/sharing/img2.png" alt="image2" /></div>
-                <div><img src="../../src/sharing/img3.png" alt="image3" /></div>
-                <div><img src="../../src/sharing/img4.png" alt="image4" /></div>
-                <div><img src="../../src/sharing/img5.png" alt="image5" /></div>
-                <div><img src="../../src/sharing/img6.png" alt="image6" /></div>
-                <div><img src="../../src/sharing/img7.png" alt="image7" /></div>
-                <div><img src="../../src/sharing/img8.png" alt="image8" /></div>
-                <div><img src="../../src/sharing/img9.png" alt="image9" /></div>
+            <h2>#FuniroFurniture</h2>
+            <div>
+                <img src="../src/sharing.png" alt="photos" />
+                <img src="../src/sharing.png" alt="photos" />
+                <img src="../src/sharing.png" alt="photos" />
             </div>
         </section>
+        <footer>
+            <div className="container">
+                <div className="company">
+                    <h1 className="logo">Furniro.</h1>
+                    <p className="location">400 University Drive Suite 200 Coral Gables,<br/>FL 33134 USA</p>
+                </div>
+                <ul>
+                    <li>Links</li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <ul>
+                    <li>Help</li>
+                    <li><a href="#">Payment Options</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Privacy Policies</a></li>
+                </ul>
+                <form action="">
+                    <label htmlFor="Newsletter">Newsletter</label>
+                    <input type="email" name="newsletter" id="newsletter" placeholder="Enter Your Email Address" />
+                    <input type="submit" value="Subscribe" />
+                </form>
+            </div>
+            <div className="container">
+                <hr/>
+                <p className="rights">2023 furino. All rights reverved</p>
+            </div>
+        </footer>
     </>
 }

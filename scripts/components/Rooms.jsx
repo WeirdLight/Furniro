@@ -23,6 +23,27 @@ function nextRoom(){
         }
     });
 }
+
+function prevRoom(){
+    const container = document.querySelector('.container-rooms');
+    const rooms = container.querySelectorAll('.room');
+    const circles = document.querySelectorAll('.circles');
+
+    rooms.forEach((el, index) => {
+        el.style.order = Number(el.style.order) + 1 == 4 ? 1 : Number(el.style.order) + 1;
+        if(el.style.order == 1){
+            circles[0].children[index].classList.add('active');
+        } else{
+            circles[0].children[index].classList.remove('active');
+        }
+        if(circles[0].children[index].classList == 'circle active'){
+            el.classList.add('first');
+        }
+        else{
+            el.classList.remove('first');
+        }
+    });
+}
 export default function Rooms(){
 
     let data = [
@@ -55,6 +76,9 @@ export default function Rooms(){
 
             const nextButton = document.querySelector('.next');
             nextButton.addEventListener('click', nextRoom);
+
+            const prevButton = document.querySelector('.prev');
+            prevButton.addEventListener('click', prevRoom)
         }
     }, []); 
 
@@ -98,10 +122,13 @@ export default function Rooms(){
                 <div className="container-rooms">
                     {data.map(el => Room(el))}
                 </div>
-                <span className="next"></span>
-            </div>
-            <div id="circle" className="circles">
+                <div className="wrapper">
+                    <span className="prev"></span>
+                    <div id="circle" className="circles">
                         {data.map((el, index) => <span key={index+1} id={index+1} className="circle"><span className="inside"></span></span>)}
+                    </div>
+                    <span className="next"></span>
+                </div>
             </div>
         </section>
     );
