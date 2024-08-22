@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react"
-import Room from "./Room";
+import Room from "./Room.jsx";
 
 
 function nextRoom(){
