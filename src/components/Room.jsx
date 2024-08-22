@@ -1,5 +1,3 @@
-import React from "react"
-
 export default function Room(data){
     return(
         <div key={data.id} className="room" style={{backgroundImage: `url(${data.img})`}}>

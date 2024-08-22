@@ -35,7 +35,7 @@ header {
   align-items: center;
 }
 header .burger {
-  background-image: url(../src/burger.svg);
+  background-image: url(../images/burger.svg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -104,7 +104,7 @@ header .services a {
 }
 
 main {
-  background-image: url(./src/background-img.svg);
+  background-image: url(../images/background-img.svg);
   width: 100%;
   height: 89.4vh;
   background-position: center center;
@@ -186,9 +186,7 @@ section.range .item:hover {
   box-shadow: 0px 3px 10px 2px rgba(171, 190, 209, 0.8);
   border-radius: 10px;
 }
-section.range .item span.img {
-  width: 300px;
-  height: 400px;
+section.range .item img.img {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -291,7 +289,7 @@ section.our-products .container .hover .container {
   display: flex;
   flex-wrap: wrap;
   height: 22%;
-  padding: 0 15px;
+  padding: 0 8px;
 }
 section.our-products .container .hover .container button {
   width: 160px;
@@ -321,18 +319,28 @@ section.our-products .container .hover .container span.actions span.action {
   height: 20px;
   cursor: pointer;
   text-underline-offset: 4px;
+  display: flex;
+  align-items: center;
+}
+section.our-products .container .hover .container span.actions span.action:nth-child(1) span {
+  background-image: url(../images/icons/share.svg);
+}
+section.our-products .container .hover .container span.actions span.action:nth-child(2) span {
+  background-image: url(../images/icons/compare.svg);
+}
+section.our-products .container .hover .container span.actions span.action:nth-child(3) span {
+  background-image: url(../images/icons/like.svg);
 }
 section.our-products .container .hover .container span.actions span.action:hover {
   text-decoration: underline;
-}
-section.our-products .container .hover .container span.actions span.action:active {
-  color: #be973f;
 }
 section.our-products .container .hover .container span.actions span.action span {
   display: inline-block;
   width: 10px;
   height: 10px;
-  background-color: white;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 section.our-products button {
   width: 200px;
@@ -482,7 +490,7 @@ section.rooms .container-rooms .room a {
   min-width: 30px;
   height: 30px;
   background-color: #B88E2F;
-  background-image: url(../../src/arrow.svg);
+  background-image: url(../images/arrow.svg);
   background-repeat: no-repeat;
   background-position: center center;
   animation-timing-function: linear;
@@ -508,7 +516,7 @@ section.rooms .next {
   display: flex;
   position: absolute;
   border-radius: 50px;
-  background-image: url(../../src/next.svg);
+  background-image: url(../images/next.svg);
   background-position: center center;
   background-repeat: no-repeat;
   box-shadow: -1px 4px 8px 0px rgba(171, 190, 209, 0.4);
@@ -704,7 +712,7 @@ footer div.container:nth-of-type(2) {
 }
 @media (max-width: 800px) {
   nav {
-    display: none;
+    display: block;
     position: absolute;
     top: 70px;
     left: 0;
@@ -721,6 +729,7 @@ footer div.container:nth-of-type(2) {
   nav ul li {
     display: block;
     height: 40px;
+    font-size: 16px;
   }
   nav ul li:first-of-type {
     margin-top: 20px;
@@ -804,7 +813,7 @@ footer div.container:nth-of-type(2) {
     display: flex;
     transform: rotate(180deg);
     border-radius: 50px;
-    background-image: url(../../src/next.svg);
+    background-image: url(../images/next.svg);
     background-position: center center;
     background-repeat: no-repeat;
     box-shadow: -1px 4px 8px 0px rgba(171, 190, 209, 0.4);

@@ -1,31 +1,12 @@
-import React from "react";
-import Services from "./components/Services.jsx";
 import Ranges from "./components/Ranges.jsx";
 import Products from "./components/Products.jsx";
 import Rooms from "./components/Rooms.jsx";
+import Header from "./components/Header/Header.jsx";
+import sharing from './images/sharing.png';
 
 export default function App(){
-    return <>
-        <header>
-            <div className="container">
-                <div className="burger"></div>
-                <a href="#" className="logo">
-                    <img src="./src/logo.svg" alt="logo" />
-                    <h1>Furniro</h1>
-                </a>
-                <nav>
-                    <ul>
-                        <a href="#"><li>Home</li></a>
-                        <a href="#"><li>Shop</li></a>
-                        <a href="#"><li>About</li></a>
-                        <a href="#"><li>Contact</li></a>
-                    </ul>
-                </nav>
-                <div className="services">
-                    <Services />
-                </div>
-            </div>
-        </header>
+    return <>  
+        <Header />
         <main>
             <div className="container">
                 <div className="banner">
@@ -57,9 +38,9 @@ export default function App(){
             <p>Share your setup with</p>
             <h2>#FuniroFurniture</h2>
             <div>
-                <img src="../src/sharing.png" alt="photos" />
-                <img src="../src/sharing.png" alt="photos" />
-                <img src="../src/sharing.png" alt="photos" />
+                <img src={sharing} alt="photos" />
+                <img src={sharing} alt="photos" />
+                <img src={sharing} alt="photos" />
             </div>
         </section>
         <footer>

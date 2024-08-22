@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import { useState, useEffect} from "react"
 import Room from "./Room";
 
 
@@ -46,68 +46,58 @@ function prevRoom(){
 }
 export default function Rooms(){
 
-    let data = [
-        {
-            id: 1,
-            title: 'Inner Peace',
-            img: '../../src/rooms/innerPeace.png',
-            typeOfRoom: 'Bed room',
-            link: '#'
-        },
-        {
-            id: 2,
-            title: 'Light room',
-            img: '../../src/rooms/lightRoom.png',
-            typeOfRoom: 'Office',
-            link: '#'
-        },
-        {
-            id: 3,
-            title: 'Scandinavia',
-            img: '../../src/rooms/scandinavianRoom.png',
-            typeOfRoom: 'Bed room',
-            link: '#'
-        },
-    ]
+    const [room, newRoom] = useState(null);
 
     useEffect(() => {
-        if(document.querySelector('.room')){
-            nextRoom();
-
-            const nextButton = document.querySelector('.next');
-            nextButton.addEventListener('click', nextRoom);
-
-            const prevButton = document.querySelector('.prev');
-            prevButton.addEventListener('click', prevRoom)
-        }
-    }, []); 
+        fetch('https://rooms-furniro.wiremockapi.cloud/rooms/')
+        .then(data => data.json())
+        .then(data => newRoom(data));
+    }, []);
 
     useEffect(() => {
-        let circles = document.querySelectorAll('.circle');
-        if(circles){
-            let circlesContainer = document.querySelector('.circles')
-            data.forEach(el => {
-                circlesContainer.style.width = Number((circlesContainer.style.width).replace('px', '')) + 18 + 'px'
-            });
-
-            circles.forEach((el, index) => el.addEventListener('click', () => {
-                document.querySelector('.active').classList.remove('active');
-                el.classList.add('active');
-                
-                let rooms = document.querySelectorAll('.container-rooms');
-                document.querySelector('.first').classList.remove('first');
-                rooms[0].children[index].style.order = 1;
-                console.log(rooms[0].children[index]);
-                rooms[0].children[index].classList.add('first');
-                
-                let j = 1, o = 0;
-                for(let i=index; i != (index + 1 == rooms[0].children.length ? 0 : index+1); (i == 0 ? i = rooms[0].children.length-1 : i = i-1)){
-                    rooms[0].children[i-j < 0 ? rooms[0].children.length-1 : i-j].style.order = rooms[0].children.length - o;
-                    o++;
-                }
-            }))
+        if(room){
+            if(document.querySelector('.room')){
+                nextRoom();
+    
+                const nextButton = document.querySelector('.next');
+                nextButton.addEventListener('click', nextRoom);
+    
+                const prevButton = document.querySelector('.prev');
+                prevButton.addEventListener('click', prevRoom)
+            }
         }
-    }, [])
+    }, [room]); 
+
+    useEffect(() => {
+        if(room){
+            let circles = document.querySelectorAll('.circle');
+            if(circles){
+                let circlesContainer = document.querySelector('.circles')
+                room.forEach(el => {
+                    circlesContainer.style.width = Number((circlesContainer.style.width).replace('px', '')) + 18 + 'px'
+                });
+    
+                circles.forEach((el, index) => el.addEventListener('click', () => {
+                    document.querySelector('.active').classList.remove('active');
+                    el.classList.add('active');
+                    
+                    let rooms = document.querySelectorAll('.container-rooms');
+                    document.querySelector('.first').classList.remove('first');
+                    rooms[0].children[index].style.order = 1;
+                    console.log(rooms[0].children[index]);
+                    rooms[0].children[index].classList.add('first');
+                    
+                    let j = 1, o = 0;
+                    for(let i=index; i != (index + 1 == rooms[0].children.length ? 0 : index+1); (i == 0 ? i = rooms[0].children.length-1 : i = i-1)){
+                        rooms[0].children[i-j < 0 ? rooms[0].children.length-1 : i-j].style.order = rooms[0].children.length - o;
+                        o++;
+                    }
+                }))
+            }
+        }
+    }, [room]);
+
+    if(!room) return <div></div>
 
     return(
         <section className="rooms">
@@ -120,12 +110,12 @@ export default function Rooms(){
                     <button>Explore more</button>
                 </div>
                 <div className="container-rooms">
-                    {data.map(el => Room(el))}
+                    {room.map(el => Room(el))}
                 </div>
                 <div className="wrapper">
                     <span className="prev"></span>
                     <div id="circle" className="circles">
-                        {data.map((el, index) => <span key={index+1} id={index+1} className="circle"><span className="inside"></span></span>)}
+                        {room.map((el, index) => <span key={index+1} id={index+1} className="circle"><span className="inside"></span></span>)}
                     </div>
                     <span className="next"></span>
                 </div>

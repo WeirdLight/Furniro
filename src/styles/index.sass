@@ -3,6 +3,7 @@ $fs-logo: 28px
 $fc-logo: #000
 $ff-poppins: "Poppins", sans-serif
 $fs-nav: 14px
+$fs-li: 16px
 $fs-label: 12px
 $fs-h1: 40px
 $fs-h2: 30px
@@ -56,7 +57,7 @@ header
     align-items: center
 
     .burger
-        background-image: url(../src/burger.svg)
+        background-image: url(../images/burger.svg)
         background-position: center center
         background-repeat: no-repeat
         background-size: contain
@@ -123,7 +124,7 @@ header
             height: 28px
 
 main
-    background-image: url(./src/background-img.svg)
+    background-image: url(../images/background-img.svg)
     width: 100%
     height: 89.4vh
     background-position: center center
@@ -195,9 +196,7 @@ section.range
         &:hover
             box-shadow: 0px 3px 10px 2px rgba(171, 190, 209, 0.8)
             border-radius: 10px
-        span.img
-            width: 300px
-            height: 400px
+        img.img
             background-position: center center
             background-size: cover
             background-repeat: no-repeat
@@ -290,7 +289,7 @@ section.our-products
                 display: flex
                 flex-wrap: wrap
                 height: 22%
-                padding: 0 15px
+                padding: 0 8px
 
                 button
                     width: 160px
@@ -315,18 +314,28 @@ section.our-products
                         height: 20px
                         cursor: pointer
                         text-underline-offset: 4px
+                        display: flex
+                        align-items: center
+                        &:nth-child(1)
+                            span
+                                background-image: url(../images/icons/share.svg)
+                        &:nth-child(2)
+                            span
+                                background-image: url(../images/icons/compare.svg)
+                        &:nth-child(3)
+                            span
+                                background-image: url(../images/icons/like.svg)
 
                         &:hover
                             text-decoration: underline
-
-                        &:active
-                            color: $fc-active
 
                         span
                             display: inline-block
                             width: 10px
                             height: 10px
-                            background-color: white
+                            background-size: contain
+                            background-position: center center
+                            background-repeat: no-repeat
 
     button
         width: 200px
@@ -445,7 +454,7 @@ section.rooms
                 min-width: 30px
                 height: 30px
                 background-color: $banner-color
-                background-image: url(../../src/arrow.svg)
+                background-image: url(../images/arrow.svg)
                 background-repeat: no-repeat
                 background-position: center center
                 animation-timing-function: linear
@@ -470,7 +479,7 @@ section.rooms
         display: flex
         position: absolute
         border-radius: 50px
-        background-image: url(../../src/next.svg)
+        background-image: url(../images/next.svg)
         background-position: center center
         background-repeat: no-repeat
         box-shadow: -1px 4px 8px 0px rgba(171, 190, 209, 0.4)
@@ -611,6 +620,10 @@ footer
         flex-direction: column
         justify-content: space-between
         height: 60px
+
+
+
+
 @keyframes box
     0%
         margin-left: 100%
@@ -621,7 +634,7 @@ footer
 
 @media (max-width: 800px) 
     nav
-        display: none
+        display: block
         position: absolute
         top: 70px
         left: 0
@@ -636,6 +649,7 @@ footer
             li
                 display: block
                 height: 40px
+                font-size: $fs-li
 
                 &:first-of-type
                     margin-top: 20px
@@ -712,7 +726,7 @@ footer
             display: flex
             transform: rotate(180deg)
             border-radius: 50px
-            background-image: url(../../src/next.svg)
+            background-image: url(../images/next.svg)
             background-position: center center
             background-repeat: no-repeat
             box-shadow: -1px 4px 8px 0px rgba(171, 190, 209, 0.4)

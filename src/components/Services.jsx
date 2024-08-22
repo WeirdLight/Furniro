@@ -1,5 +1,5 @@
 import SVG from "./SVG.jsx";
-import React, { useState } from "react"
+import { useState } from "react"
 
 export default function Services({type}){
     const [activeOld, activeNew] = useState('');
