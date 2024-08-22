@@ -1,8 +1,9 @@
-import Services from "../Services.jsx";
+import Services from "./Services.jsx";
 import logo from "./logo.svg";
+import './index.css';
 
 export default function Header(){
-    return <header>
+    return <header className="nav">
         <div className="container">
             <div className="burger"></div>
             <a href="#" className="logo">
@@ -11,8 +12,8 @@ export default function Header(){
             </a>
             <nav>
                 <ul>
-                    <a href="#"><li>Home</li></a>
-                    <a href="#"><li>Shop</li></a>
+                    <a href="home"><li>Home</li></a>
+                    <a href="shop"><li>Shop</li></a>
                     <a href="#"><li>About</li></a>
                     <a href="#"><li>Contact</li></a>
                 </ul>

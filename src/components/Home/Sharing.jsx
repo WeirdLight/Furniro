@@ -1,4 +1,4 @@
-import sharing from '../images/sharing.png'
+import sharing from '../../images/sharing.png'
 
 export default function Sharing(){
     return(

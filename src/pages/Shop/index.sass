@@ -1,0 +1,99 @@
+@import '../../styles/_index.sass'
+
+section.filter
+    height: 100px
+    background-color: $color-settings
+    display: flex
+    padding: 31 0px
+    align-items: center
+
+    div.container
+        justify-content: space-between
+
+        p
+            @include text($fs-li, normal, normal, 0, black)
+                
+            &.num-showing
+                font-size: $fs-nav
+                display: flex
+                align-items: center
+        span.filter-settings
+            display: flex
+            align-items: center
+            justify-content: space-between
+            width: 65px
+
+        .choise
+            display: flex
+            align-items: center
+            width: 65px
+            justify-content: space-between
+
+    div
+        display: flex
+
+        &.left
+            width: 400px
+            justify-content: space-between
+
+        .filter-settings
+            cursor: pointer
+        img
+            width: 19px
+            height: 16.7px
+            cursor: pointer
+
+    form
+        width: 400px
+        display: flex
+        justify-content: space-between
+
+        span
+            display: flex
+            align-items: center
+
+        textarea
+            height: 50px
+            height: 50px
+            border: none
+            resize: none
+            outline: none
+            padding-top: 14px
+            padding-bottom: 15px
+            margin-left: 15px
+            @include text($fs-li, normal, normal, 0, $color-footer)
+
+            &:focus
+                color: black
+
+        .num
+            min-width: 50px
+            text-align: center
+
+        .short
+            width: 180px
+            padding-left: 15px
+            padding-right: 15px
+
+        .dropdown
+            width: 50px
+            position: relative
+
+    ul
+        display: none
+        position: absolute
+        left: 15px
+        width: 50px
+        top: 50px
+        background-color: #fff
+        li
+            list-style: none
+            display: flex
+            justify-content: center
+            align-items: center
+            height: 30px
+            cursor: pointer
+            border-bottom: 1px solid $border-color
+
+            &:first-of-type
+                border-top: 1px solid $border-color

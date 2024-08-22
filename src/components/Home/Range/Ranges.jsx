@@ -1,6 +1,6 @@
-import bedroom from '../../images/range/bedroom.png';
-import dining from '../../images/range/dining.png';
-import living from '../../images/range/living.png';
+import bedroom from '../../../images/range/bedroom.png';
+import dining from '../../../images/range/dining.png';
+import living from '../../../images/range/living.png';
 
 export default function Ranges({img, title}){
     let rooms = {

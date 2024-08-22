@@ -1,19 +1,21 @@
-import Range from "./components/Range/Range.jsx";
-import Products from "./components/Products.jsx";
-import Rooms from "./components/Rooms/Rooms.jsx";
 import Header from "./components/Header/Header.jsx";
-import Sharing from './components/Sharing.jsx'
-import Main from './components/Main.jsx';
-import Footer from './components/Footer.jsx'
+import Footer from './components/Footer/Footer.jsx'
+import Home from "./pages/Home/Home.jsx";
+import Shop from "./pages/Shop/Shop.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+    {path: "/", element: <Home />},
+    {path: "/home", element: <Home />},
+    {path: "/shop", element: <Shop />}
+]);
 
 export default function App(){
     return <>  
         <Header />
-        <Main />
-        <Range /> 
-        <Products />
-        <Rooms />
-        <Sharing />
+
+        <RouterProvider router={router} />
+
         <Footer />
     </>
 }

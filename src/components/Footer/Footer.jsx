@@ -1,3 +1,5 @@
+import './index.css';
+
 export default function Footer(){
     return (
         <footer>
@@ -8,8 +10,8 @@ export default function Footer(){
                 </div>
                 <ul>
                     <li>Links</li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="shop">Shop</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>

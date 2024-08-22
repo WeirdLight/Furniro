@@ -1,0 +1,85 @@
+$main-color: #fff
+$fs-logo: 28px
+$fc-logo: #000
+$ff-poppins: "Poppins", sans-serif
+$fs-nav: 14px
+$fs-li: 16px
+$fs-label: 12px
+$fs-h1: 40px
+$fs-h2: 30px
+$fs-h3: 24px
+$descr-color: #616161
+$color-section: #FCF8F3
+$fc-active: #be973f
+$fc-headers: #3A3A3A
+$fc-descr: #666666
+$fc-h3: #333333
+$banner-color: #B88E2F
+$color-sales: #E97171
+$color-new: #2EC1AC
+$color-footer: #9F9F9F
+$border-color: #D9D9D9
+$color-settings: #F9F1E7
+
+@mixin text($fs, $fw, $line-height, $marginB, $color)
+    font-size: $fs
+    color: $color
+    font-weight: $fw
+    line-height: $line-height
+    margin-bottom: $marginB
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    font-family: $ff-poppins
+
+h1
+    @include text($fs-h1, bold, 50px, 10px, $banner-color)
+
+h2
+    @include text($fs-h2, bold, normal, 5px, $fc-headers)
+
+h3
+    @include text($fs-h3, bold, normal, 0, $fc-h3)
+
+.container
+    max-width: 1100px
+    width: 80%
+    margin: 0 auto
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+
+header.title
+    background-image: url('../../images/background-title.svg')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center center
+    height: 316px
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+
+    h1
+        font-weight: 500
+        color: black
+        text-align: center
+        margin: 0
+    
+    .path
+        width: 120px
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+    a
+        text-decoration: none
+        color: black
+
+    span.sign
+        font-size: 24px
+    span.name
+        font-weight: 200

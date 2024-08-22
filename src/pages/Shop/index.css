@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+  color: #B88E2F;
+  font-weight: bold;
+  line-height: 50px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 30px;
+  color: #3A3A3A;
+  font-weight: bold;
+  line-height: normal;
+  margin-bottom: 5px;
+}
+
+h3 {
+  font-size: 24px;
+  color: #333333;
+  font-weight: bold;
+  line-height: normal;
+  margin-bottom: 0;
+}
+
+.container {
+  max-width: 1100px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+header.title {
+  background-image: url("../../images/background-title.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 316px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+header.title h1 {
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  margin: 0;
+}
+header.title .path {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header.title a {
+  text-decoration: none;
+  color: black;
+}
+header.title span.sign {
+  font-size: 24px;
+}
+header.title span.name {
+  font-weight: 200;
+}
+
+section.filter {
+  height: 100px;
+  background-color: #F9F1E7;
+  display: flex;
+  padding: 31 0px;
+  align-items: center;
+}
+section.filter div.container {
+  justify-content: space-between;
+}
+section.filter div.container p {
+  font-size: 16px;
+  color: black;
+  font-weight: normal;
+  line-height: normal;
+  margin-bottom: 0;
+}
+section.filter div.container p.num-showing {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+section.filter div.container span.filter-settings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 65px;
+}
+section.filter div.container .choise {
+  display: flex;
+  align-items: center;
+  width: 65px;
+  justify-content: space-between;
+}
+section.filter div {
+  display: flex;
+}
+section.filter div.left {
+  width: 400px;
+  justify-content: space-between;
+}
+section.filter div .filter-settings {
+  cursor: pointer;
+}
+section.filter div img {
+  width: 19px;
+  height: 16.7px;
+  cursor: pointer;
+}
+section.filter form {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+section.filter form span {
+  display: flex;
+  align-items: center;
+}
+section.filter form textarea {
+  height: 50px;
+  height: 50px;
+  border: none;
+  resize: none;
+  outline: none;
+  padding-top: 14px;
+  padding-bottom: 15px;
+  margin-left: 15px;
+  font-size: 16px;
+  color: #9F9F9F;
+  font-weight: normal;
+  line-height: normal;
+  margin-bottom: 0;
+}
+section.filter form textarea:focus {
+  color: black;
+}
+section.filter form .num {
+  min-width: 50px;
+  text-align: center;
+}
+section.filter form .short {
+  width: 180px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+section.filter form .dropdown {
+  width: 50px;
+  position: relative;
+}
+section.filter ul {
+  display: none;
+  position: absolute;
+  left: 15px;
+  width: 50px;
+  top: 50px;
+  background-color: #fff;
+}
+section.filter ul li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  cursor: pointer;
+  border-bottom: 1px solid #D9D9D9;
+}
+section.filter ul li:first-of-type {
+  border-top: 1px solid #D9D9D9;
+}/*# sourceMappingURL=index.css.map */

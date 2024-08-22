@@ -41,15 +41,15 @@ export default function Products() {
                         <button className="cart">Add to cart</button>
                         <span className="actions">
                             <span className="action">
-                                <span style={{ backgroundImage: 'url(../images/icons/share.svg)' }}></span>
+                                <span style={{ backgroundimage: 'url(../images/icons/share.svg)' }}></span>
                                 Share
                             </span>
                             <span className="action">
-                                <span style={{ backgroundImage: 'url(../images/icons/compare.svg)' }}></span>
+                                <span style={{ backgroundimage: 'url(../images/icons/compare.svg)' }}></span>
                                 Compare
                             </span>
                             <span className="action">
-                                <span style={{ backgroundImage: 'url(../images/icons/like.svg)' }}></span>
+                                <span style={{ backgroundimage: 'url(../images/icons/like.svg)' }}></span>
                                 Like
                             </span>
                         </span>
