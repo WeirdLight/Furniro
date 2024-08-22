@@ -139,7 +139,7 @@ footer input[type=email] {
   background-color: rgba(0, 0, 0, 0);
   border-bottom: 1.5px solid #000;
   width: 200px;
-  height: 23px;
+  height: 22px;
   transition: 0.3s;
 }
 footer input[type=email]:focus {
